@@ -17,6 +17,9 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet" />
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -32,16 +35,16 @@
 #FFEAEA -->
 </head>
 
-<body class="bg-[#f5f7f6] font-[Inter] border-2">
+<body class="">
 
 
     <!-- ================================= -->
     <!-- NAVBAR -->
     <!-- ================================= -->
 
-    <nav class="absolute top-0 w-full z-50 backdrop-blur-md bg-white/5 border-b border-white/10">
+    <nav class="w-full shadow-lg font-inter">
         <div class="px-5">
-            <div class="navbar text-white ">
+            <div class="navbar">
                 <div class="navbar-start">
                     <div class="dropdown">
                         <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -64,10 +67,10 @@
                     <p>CESPA</p>
                 </div>
                 <div class="navbar-center hidden lg:flex">
-                    <ul class="menu menu-horizontal px-1 gap-2">
+                    <ul class="menu menu-horizontal px-1 gap-2 uppercase text-[12px]">
 
                         <a href="#"
-                            class="relative text-white/80 font-medium tracking-wide transition-all duration-300 hover:text-green-400 group py-2 px-3 nav-link">
+                            class="relative font-medium tracking-wide transition-all duration-300 hover:text-green-400 group py-2 px-3 nav-link">
                             Home
                             <!-- Glowing underline accent -->
                             <span
@@ -75,34 +78,34 @@
                         </a>
 
                         <a href="#"
-                            class="relative text-white/80 font-medium tracking-wide transition-all duration-300 hover:text-green-400 group py-2 px-3">
+                            class="relative  font-medium tracking-wide transition-all duration-300 hover:text-green-400 group py-2 px-3">
                             About
                             <span
                                 class="absolute bottom-0 left-3 right-3 h-[2px] bg-green-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 shadow-[0_0_8px_#4ade80]"></span>
                         </a>
 
                         <a href="#"
-                            class="relative text-white/80 font-medium tracking-wide transition-all duration-300 hover:text-green-400 group py-2 px-3">
+                            class="relative  font-medium tracking-wide transition-all duration-300 hover:text-green-400 group py-2 px-3">
                             Department
                             <span
                                 class="absolute bottom-0 left-3 right-3 h-[2px] bg-green-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 shadow-[0_0_8px_#4ade80]"></span>
                         </a>
 
-                        <a href="#"
-                            class="relative text-white/80 font-medium tracking-wide transition-all duration-300 hover:text-green-400 group py-2 px-3">
-                            Events
+                        <a href="./alumni.html"
+                            class="relative  font-medium tracking-wide transition-all duration-300 hover:text-green-400 group py-2 px-3">
+                            Alumni
                             <span
                                 class="absolute bottom-0 left-3 right-3 h-[2px] bg-green-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 shadow-[0_0_8px_#4ade80]"></span>
                         </a>
 
                         <a href="#"
-                            class="relative text-white/80 font-medium tracking-wide transition-all duration-300 hover:text-green-400 group py-2 px-3">
+                            class="relative  font-medium tracking-wide transition-all duration-300 hover:text-green-400 group py-2 px-3">
                             Contact
                             <span
                                 class="absolute bottom-0 left-3 right-3 h-[2px] bg-green-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 shadow-[0_0_8px_#4ade80]"></span>
                         </a>
                         <a href="./signup.html"
-                            class="relative text-white/80 font-medium tracking-wide transition-all duration-300 hover:text-green-400 group py-2 px-3">
+                            class="relative  font-medium tracking-wide transition-all duration-300 hover:text-green-400 group py-2 px-3">
                             Sign Up
                             <span
                                 class="absolute bottom-0 left-3 right-3 h-[2px] bg-green-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 shadow-[0_0_8px_#4ade80]"></span>
@@ -116,10 +119,6 @@
                     <span id="no-user" class="bg-white rounded-full p-1">
                         <img class="w-8 h-8  object-cover" src="./Assets/user-avatar (1).png" alt="">
                     </span>
-                    <button
-                        class="border border-green/20 hover:bg-white/10 hover:text-green-400 duration-300 bg-green-400 px-5 py-2 rounded-md text-sm font-semibold">
-                        Join With Us
-                    </button>
                 </div>
             </div>
         </div>
@@ -132,169 +131,68 @@
     <!-- HERO SECTION -->
     <!-- ================================= -->
 
-    <section class="relative overflow-hidden min-h-screen bg-[url('./Assets/modern-business-center.jpg')] bg-cover">
-
-
-        <!-- Glow -->
-
-        <div class="absolute top-[-200px] right-[-100px] w-[600px] h-[600px] bg-green-400/10 blur-[120px] rounded-full">
+    <section
+        class=" overflow-hidden min-h-screen max-w-7xl mx-auto  lg:px-10 flex flex-col items-center justify-center lg:items-center">
+        <!-- Eyebrow -->
+        <div class="flex items-center justify-center gap-3 mb-10 anim-ready slide-from-top delay-1">
+            <span class="w-6 h-px bg-black  inline-block"></span>
+            <p class="font-inter text-[10px] font-medium tracking-[0.2em] uppercase ">
+                Civil Engineering Student Club
+            </p>
+            <span class="w-6 h-px bg-black inline-block"></span>
         </div>
 
-
-
-        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
-
-
-            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-20 pt-44 pb-24">
-
-
-                <!-- LEFT CONTENT -->
-
-                <div class="w-full lg:w-[60%]">
-
-
-                    <!-- Tag -->
-                    <!-- Added 'w-fit' to the parent container -->
-                    <div
-                        class="flex items-center gap-3 w-fit px-5 py-2 rounded-full border bg-white/5 text-[11px] tracking-[2px] text-white/80 border-green-400">
-                        <!-- Glowing green dot -->
-                        <div class="h-2 w-2 rounded-full animate-bounce bg-green-400 shrink-0"></div>
-
-                        <!-- Text badge -->
-                        <span>
-                            CIVIL ENGINEERING STUDENT CLUB
-                        </span>
-                    </div>
-
-
-
-                    <!-- Heading -->
-
-                    <h1 class="text-white text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mt-8">
-
-                        Building Future
-                        <span class="text-green-400">
-                            Engineers,
-                        </span>
-
-                        Leaders
-                        <br>
-
-                        and Innovators.
-
-                    </h1>
-
-
-
-                    <!-- Paragraph -->
-
-                    <p class="text-white/70 text-base leading-8 mt-8 max-w-2xl">
-
-                        CESPA is a premier Civil Engineering student association focused on
-                        innovation, technical excellence, leadership development, and
-                        professional growth through workshops, competitions, research,
-                        and collaboration.
-
-                    </p>
-
-
-
-                    <!-- Buttons -->
-
-                    <div class="flex flex-col sm:flex-row gap-5 mt-10">
-
-                        <button
-                            class="bg-green-600 hover:bg-green-500 hover:scale-[1.03] hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] active:scale-95 transition-all duration-300 text-white px-8 py-2 rounded-md font-semibold">
-                            Explore CESPA
-                        </button>
-
-                        <!-- Secondary Button (Consistent Hover & Active State) -->
-                        <button
-                            class="border border-green-400 bg-transparent hover:bg-white/5 hover:scale-[1.03] hover:border-green-300 hover:shadow-[0_0_20px_rgba(34,197,94,0.2)] active:scale-95 transition-all duration-300 text-white px-8 py-2 rounded-md font-semibold">
-                            View Activities
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-
-
-                <!-- RIGHT STATS -->
-
-                <div class="w-full lg:w-[260px] flex flex-row lg:flex-col gap-5 flex-wrap">
-
-
-                    <!-- Card -->
-
-                    <div class="flex-1 bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl p-7">
-
-                        <h2 class="text-4xl font-bold text-green-400">
-                            500+
-                        </h2>
-
-                        <p class="text-white/70 mt-2">
-                            Members
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="flex-1 bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl p-7">
-
-                        <h2 class="text-4xl font-bold text-green-400">
-                            8
-                        </h2>
-
-                        <p class="text-white/70 mt-2">
-                            Departments
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="flex-1 bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl p-7">
-
-                        <h2 class="text-4xl font-bold text-green-400">
-                            60+
-                        </h2>
-
-                        <p class="text-white/70 mt-2">
-                            Events Held
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="flex-1 bg-white/5 border border-white/10 backdrop-blur-xl rounded-2xl p-7">
-
-                        <h2 class="text-4xl font-bold text-green-400">
-                            10
-                        </h2>
-
-                        <p class="text-white/70 mt-2">
-                            Years Active
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
+        <!-- Main Title -->
+        <h1
+            class=" flex flex-col justify-center items-center font-cormorant font-light text-[clamp(38px,5.5vw,64px)] leading-[1.15] tracking-[-0.01em] text-[#111111] mb-3">
+
+            <span class="block anim-ready slide-from-left  delay-2">Civil Engineering</span>
+            <span class="block anim-ready slide-from-right delay-3">Association of</span>
+            <span class="block italic font-normal
+                   anim-ready slide-from-bottom delay-4">Student &amp; Professionals</span>
+
+        </h1>
+
+        <!-- Divider -->
+        <div class="h-px bg-[#111111] mx-auto my-7 divider-anim"></div>
+
+        <!-- Subtitle -->
+        <p
+            class="font-inter text-[11px] font-normal tracking-[0.12em] uppercase  mb-12 mt-4 anim-ready fade-in delay-5">
+            CESPA &mdash; Est. Since 2026
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex items-center justify-center gap-8 ">
+            <a href="#"
+                class="font-inter text-[11px] font-medium tracking-[0.15em] uppercase text-[#111] border border-black px-7 py-3  hover:!bg-black hover:text-white transition-colors duration-300">
+                Explore CESPA
+            </a>
+            <a href="#"
+                class="font-inter text-[11px] font-medium tracking-[0.15em] uppercase transition-colors duration-200 flex items-center gap-1.5 group ">
+                View Activities
+                <span class="group-hover:translate-x-1 transition-transform duration-200">→</span>
+            </a>
         </div>
 
     </section>
 
 
 
+
+
+    <!-- Notice section -->
+    <div class="marquee-wrapper">
+        <div class="marquee space-x-4">
+            <span>NOTICE: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure, sunt.</span>
+            <span>NOTICE: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure, sunt.</span>
+            <span>NOTICE: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure, sunt.</span>
+            
+        </div>
+    </div>
+
     <!-- ===== WHO WE ARE ===== -->
-    <section class="max-w-7xl mx-auto px-6 py-10 lg:py-16 my-52">
+    <section class="max-w-7xl mx-auto px-6 my-20 lg:py-16">
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
 
@@ -1172,7 +1070,7 @@
                                     Name
                                 </label>
 
-                                <input id="name" type="text" name="name"  placeholder="Your name" required
+                                <input id="name" type="text" name="name" placeholder="Your name" required
                                     class="w-full px-5 py-4 rounded-2xl border border-[#d8d8d8] bg-[#fafafa] outline-none focus:ring-2 focus:ring-[#173d2d]" />
                             </div>
 
@@ -1261,7 +1159,32 @@
             </a>
         </nav>
     </footer>
+    <script>
+        // --- Option A: trigger on page load (used here) ---
+        window.addEventListener('load', () => {
+            // Small timeout ensures the browser renders the hidden state first
+            setTimeout(() => {
+                document.querySelectorAll('.anim-ready, .divider-anim').forEach(el => {
+                    el.classList.add('animate');
+                });
+            }, 80);
+        });
 
+
+        // --- Option B: trigger on scroll (uncomment to use instead) ---
+        // const observer = new IntersectionObserver((entries) => {
+        //   entries.forEach(entry => {
+        //     if (entry.isIntersecting) {
+        //       entry.target.classList.add('animate');
+        //       observer.unobserve(entry.target); // animate only once
+        //     }
+        //   });
+        // }, { threshold: 0.15 });
+        //
+        // document.querySelectorAll('.anim-ready, .divider-anim').forEach(el => {
+        //   observer.observe(el);
+        // });
+    </script>
     <script src="./activity.js"></script>
     <script src="./home.js"></script>
     <script src="./contact.js"></script>

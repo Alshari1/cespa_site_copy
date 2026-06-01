@@ -1,5 +1,114 @@
-@import "tailwindcss" ;
+@import "tailwindcss";
 
+/* ============================================================
+       ENTRANCE ANIMATIONS
+       How to reuse in any component:
+         1. Add class  "anim-ready"  to the element you want to animate.
+         2. Choose a direction class:
+              .slide-from-top    → slides down into place
+              .slide-from-bottom → slides up into place
+              .slide-from-left   → slides right into place
+              .slide-from-right  → slides left into place
+              .fade-in           → fades in (no movement)
+         3. Add a delay class to stagger multiple elements:
+              .delay-1  (100ms)  .delay-2  (200ms)  .delay-3  (300ms)
+              .delay-4  (400ms)  .delay-5  (500ms)  .delay-6  (600ms)
+         4. Elements START hidden. JavaScript adds  "animate"  to trigger.
+    ============================================================ */
+
+/* --- starting (hidden) state --- */
+.anim-ready {
+    opacity: 0;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+/* --- direction offsets --- */
+.slide-from-top {
+    transform: translateY(-28px);
+}
+
+.slide-from-bottom {
+    transform: translateY(28px);
+}
+
+.slide-from-left {
+    transform: translateX(-28px);
+}
+
+.slide-from-right {
+    transform: translateX(28px);
+}
+
+.fade-in {
+    transform: none;
+}
+
+/* --- triggered (visible) state — JS adds this class --- */
+.anim-ready.animate {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* --- stagger delays --- */
+.delay-1 {
+    transition-delay: 0.10s;
+}
+
+.delay-2 {
+    transition-delay: 0.20s;
+}
+
+.delay-3 {
+    transition-delay: 0.35s;
+}
+
+.delay-4 {
+    transition-delay: 0.50s;
+}
+
+.delay-5 {
+    transition-delay: 0.65s;
+}
+
+.delay-6 {
+    transition-delay: 0.80s;
+}
+
+
+/* ============================================================
+       DIVIDER GROW ANIMATION
+       Used on the thin horizontal rule between the title and subtitle.
+       Reuse: add  "divider-anim"  to any  <hr>  or  <div>  that acts
+       as a horizontal line. It will expand from 0 → full width
+       once  "animate"  is also added.
+    ============================================================ */
+.divider-anim {
+    width: 0;
+    transition: width 0.7s ease 0.55s;
+    /* delay matches delay-4 */
+}
+
+.divider-anim.animate {
+    width: 2.5rem;
+    /* = w-10 = 40px */
+}
+
+/* Marque */
+
+
+/* The outer container that hides the overflow */
+.marquee-wrapper {
+    overflow: hidden; /* Hides the text when it goes off-screen */
+    width: 100%;
+    padding: 15px 0;
+}
+
+.marquee {
+    display: inline-block;
+    white-space: nowrap; /* Forces text to stay on one single line */
+    will-change: transform;
+
+}
 
 
 a:hover {
@@ -8,7 +117,7 @@ a:hover {
     background-color: transparent !important;
 }
 
-.activity-card{
+.activity-card {
     position: relative;
     overflow: hidden;
 
@@ -23,55 +132,53 @@ a:hover {
     transition: all 0.35s ease;
 
     box-shadow:
-        0 8px 32px rgba(0,0,0,0.15);
+        0 8px 32px rgba(0, 0, 0, 0.15);
 
     cursor: pointer;
-    color:red;
+    color: red;
 }
 
 /* Hover Effect */
-.activity-card:hover{
+.activity-card:hover {
     transform: translateY(-8px);
 
     border-color: rgba(52, 211, 153, 0.35);
 
-    background: rgba(255,255,255,0.08);
+    background: rgba(255, 255, 255, 0.08);
 
     box-shadow:
         0 20px 40px rgba(16, 185, 129, 0.12),
-        0 10px 30px rgba(0,0,0,0.25);
+        0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 /* Gradient Glow */
-.activity-card::before{
+.activity-card::before {
     content: "";
 
     position: absolute;
     inset: 0;
 
     background:
-        linear-gradient(
-            135deg,
-            rgba(52,211,153,0.08),
-            transparent 60%
-        );
+        linear-gradient(135deg,
+            rgba(52, 211, 153, 0.08),
+            transparent 60%);
 
     opacity: 0;
     transition: opacity 0.35s ease;
 }
 
-.activity-card:hover::before{
+.activity-card:hover::before {
     opacity: 1;
 }
 
 /* Badge */
-.activity-card span{
+.activity-card span {
     display: inline-block;
 
 
-    background: rgba(52,211,153,0.12);
+    background: rgba(52, 211, 153, 0.12);
 
-    border: 1px solid rgba(52,211,153,0.2);
+    border: 1px solid rgba(52, 211, 153, 0.2);
 
     color: #6ee7b7;
 
@@ -82,7 +189,7 @@ a:hover {
 }
 
 /* Title */
-.activity-card h3{
+.activity-card h3 {
     margin-top: 22px;
     margin-bottom: 14px;
 
@@ -94,12 +201,12 @@ a:hover {
     transition: color 0.3s ease;
 }
 
-.activity-card:hover h3{
+.activity-card:hover h3 {
     color: #6ee7b7;
 }
 
 /* Description */
-.activity-card p{
+.activity-card p {
     color: #d1d5db;
 
     font-size: 15px;
@@ -107,15 +214,36 @@ a:hover {
 }
 
 /* Mobile Responsive */
-@media(max-width:768px){
+@media(max-width:768px) {
 
-    .activity-card{
+    .activity-card {
         padding: 22px;
         border-radius: 20px;
     }
 
-    .activity-card h3{
+    .activity-card h3 {
         font-size: 20px;
     }
 
+}
+
+;
+
+@font-face {
+    font-family: 'Preospe';
+    src: url('./Assets/preospe-modern-futuristic-font/Preospe.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.preospe-font {
+    font-family: 'Preospe', sans-serif;
+}
+
+.font-cormorant {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-inter {
+    font-family: 'Inter', sans-serif;
 }
