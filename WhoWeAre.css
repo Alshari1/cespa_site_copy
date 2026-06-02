@@ -1,0 +1,278 @@
+/* ─── Fake page context ─────────────────────────── */
+.page-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.page-section span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--grey);
+}
+
+.scroll-hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    animation: bounce 1.8s ease-in-out infinite;
+}
+
+.scroll-hint span {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    color: var(--grey);
+}
+
+.scroll-hint svg {
+    opacity: 0.4;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+}
+
+/* ─── PIN SYSTEM ────────────────────────────────────
+   #outer  : tall element — provides scroll distance
+   #sticky : stuck to viewport top, height = 100vh
+──────────────────────────────────────────────────── */
+#outer {
+    /* height set by JS = 100vh + N * stepPx */
+    position: relative;
+}
+
+#sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+/* ═══════════════════════════════════════════════════
+   LEFT PANEL — stat cards collage
+═══════════════════════════════════════════════════ */
+.left-panel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5vh 4vw;
+    border-right: 1px solid var(--line);
+}
+
+.cards-stage {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    height: 380px;
+}
+
+/* Each card hidden by default */
+.s-card {
+    position: absolute;
+    background: var(--white);
+    border: 1px solid var(--black);
+    padding: 1.5rem 1.8rem;
+
+    /* initial hidden state */
+    opacity: 0;
+    transform: translateY(50px) rotate(var(--r));
+    transition:
+        opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+/* revealed state */
+.s-card.in {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--r));
+}
+
+.s-card .lbl {
+    font-size: 0.58rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: black;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+}
+
+.s-card .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.4rem;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.01em;
+}
+
+.s-card .sub {
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: black;
+    margin-top: 0.3rem;
+    letter-spacing: 0.05em;
+}
+
+/* Collage positions — slightly skewed, overlapping */
+#c1 {
+    --r: -3deg;
+    top: 0%;
+    left: 0%;
+    width: 55%;
+    z-index: 1;
+}
+
+#c2 {
+    --r: 2.5deg;
+    top: 2%;
+    left: 46%;
+    width: 54%;
+    z-index: 2;
+}
+
+#c3 {
+    --r: 1.5deg;
+    top: 48%;
+    left: 5%;
+    width: 52%;
+    z-index: 3;
+}
+
+#c4 {
+    --r: -2deg;
+    top: 50%;
+    left: 44%;
+    width: 55%;
+    z-index: 4;
+}
+
+/* Footer strip */
+.cards-footer {
+    position: absolute;
+    bottom: -2.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: black;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.5s ease 0.1s;
+}
+
+.cards-footer.in {
+    opacity: 1;
+}
+
+/* ═══════════════════════════════════════════════════
+   RIGHT PANEL — text content
+═══════════════════════════════════════════════════ */
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6vh 5vw 6vh 4vw;
+    position: relative;
+}
+
+
+
+/* Text blocks — hidden initially */
+.t-block {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+        opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+    max-width: 480px;
+}
+
+.t-block.in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.t-block+.t-block {
+    margin-top: 1.6rem;
+}
+
+.t-block blockquote {
+    border-left: 1.5px solid var(--black);
+    padding-left: 1.1rem;
+}
+
+.t-block p,
+.t-block blockquote p {
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.8;
+    /* color: #2c2c2c; */
+}
+
+/* Progress bar — right edge */
+.progress-bar {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding-right: 1.2rem;
+}
+
+.pip {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--line);
+    transition: background 0.3s, transform 0.3s;
+}
+
+.pip.active {
+    background: var(--black);
+    transform: scale(1.5);
+}
+
+/* Scroll nudge when pinned */
+.scroll-nudge {
+    position: absolute;
+    bottom: 1.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.55rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--grey);
+    opacity: 1;
+    transition: opacity 0.4s;
+    white-space: nowrap;
+}
+
+.scroll-nudge.hidden {
+    opacity: 0;
+}

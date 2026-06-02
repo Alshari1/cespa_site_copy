@@ -15,7 +15,7 @@ if (user) {
 
 
 // marque
-function Marquee(selector, speed = 2) {
+function Marquee(selector, speed) {
     const parent = document.querySelector(selector);
     if (!parent) return;
 
@@ -45,5 +45,5 @@ function Marquee(selector, speed = 2) {
 
 // Runs instantly when the DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    Marquee('.marquee', 2);
+    Marquee('.marquee', 1.2);
 });

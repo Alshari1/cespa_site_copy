@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CESPA — Activities & Events</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #fff; font-family: 'Inter', sans-serif; color: #1a1a1a; }
+
+  .section { padding: 6rem 5rem; max-width: 1200px; margin: 0 auto; }
+
+  /* Header */
+  .header { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 3rem; border-bottom: 0.5px solid #e0ddd8; margin-bottom: 0; }
+  .eyebrow { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #999; margin-bottom: 1.2rem; }
+  .title { font-family: 'Playfair Display', serif; font-size: 52px; font-weight: 400; line-height: 1.05; color: #111; }
+  .title em { font-style: italic; }
+  .header-sub { font-size: 13px; color: #888; line-height: 1.8; max-width: 230px; text-align: right; }
+
+  /* Rows */
+  .row { display: grid; grid-template-columns: 64px 100px 1fr 48px; align-items: center; gap: 2.5rem; padding: 2rem 0; border-bottom: 0.5px solid #e8e6e1; cursor: pointer; transition: padding-left 0.3s ease; }
+  .row:hover { padding-left: 14px; }
+  .row-num { font-family: 'Playfair Display', serif; font-style: italic; font-size: 13px; color: #bbb; }
+  .row-tag { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #999; border: 0.5px solid #ddd; padding: 5px 12px; white-space: nowrap; display: inline-block; }
+  .row-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: #111; margin-bottom: 5px; }
+  .row-desc { font-size: 13px; color: #888; line-height: 1.8; }
+  .row-arrow { font-size: 20px; color: #ccc; text-align: right; transition: color 0.2s, transform 0.25s; }
+  .row:hover .row-arrow { color: #111; transform: translateX(6px); }
+
+  /* Footer */
+  .footer { margin-top: 3rem; display: flex; justify-content: space-between; align-items: center; }
+  .est { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #bbb; }
+  .cta { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #111; border: 0.5px solid #999; padding: 12px 26px; background: none; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; transition: background 0.2s; }
+  .cta:hover { background: #f7f5f0; }
+  .arrow-icon { display: inline-block; transition: transform 0.2s; }
+  .cta:hover .arrow-icon { transform: translateX(4px); }
+</style>
+</head>
+<body>
+<section class="section">
+
+  <div class="header">
+    <div>
+      <p class="eyebrow">What we do</p>
+      <h2 class="title">Activities &amp;<br><em>Events</em></h2>
+    </div>
+    <p class="header-sub">Connecting civil engineering students and professionals through knowledge, practice, and research.</p>
+  </div>
+
+  <div class="rows">
+    <div class="row">
+      <span class="row-num">01</span>
+      <span class="row-tag">Seminar</span>
+      <div>
+        <p class="row-title">Industry Seminars</p>
+        <p class="row-desc">Keynote sessions by engineers, architects, and policymakers sharing real-world insights and career guidance.</p>
+      </div>
+      <span class="row-arrow">→</span>
+    </div>
+
+    <div class="row">
+      <span class="row-num">02</span>
+      <span class="row-tag">Workshop</span>
+      <div>
+        <p class="row-title">Technical Workshop</p>
+        <p class="row-desc">Hands-on engineering sessions for students and young professionals to build practical skills.</p>
+      </div>
+      <span class="row-arrow">→</span>
+    </div>
+
+    <div class="row">
+      <span class="row-num">03</span>
+      <span class="row-tag">Conference</span>
+      <div>
+        <p class="row-title">Research Conference</p>
+        <p class="row-desc">Presentation of innovative research and sustainable engineering concepts from leading academics.</p>
+      </div>
+      <span class="row-arrow">→</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span class="est">CESPA — Est. since 2026</span>
+    <button class="cta">View all activities <span class="arrow-icon">→</span></button>
+  </div>
+
+</section>
+</body>
+</html>

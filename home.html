@@ -26,6 +26,8 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./WhoWeAre.css">
+    <link rel="stylesheet" href="./activity.css">
 
 
     <!-- color palatte -->
@@ -183,148 +185,98 @@
 
     <!-- Notice section -->
     <div class="marquee-wrapper">
-        <div class="marquee space-x-4">
-            <span>NOTICE: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure, sunt.</span>
-            <span>NOTICE: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure, sunt.</span>
-            <span>NOTICE: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure, sunt.</span>
-            <span>NOTICE: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure, sunt.</span>
-            
+        <div class="marquee space-x-4 font-inter uppercase">
+            <span>Notice here.</span>
+            <span>Notice here.</span>
+            <span>Notice here.</span>
+            <span>Notice here.</span>
+            <span>Notice here.</span>
+
+
         </div>
     </div>
 
     <!-- ===== WHO WE ARE ===== -->
-    <section class="max-w-7xl mx-auto px-6 my-20 lg:py-16">
+    <!-- ── PIN SECTION ── -->
+    <div id="outer">
+        <div id="sticky">
+            <!-- LEFT: stat cards -->
+            <div class="left-panel">
+                <div class="cards-stage">
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+                    <div class="s-card border " id="c1">
+                        <div class="lbl">Founded</div>
+                        <div class="num">2026</div>
+                        <div class="sub">at GSTU, Bangladesh</div>
+                    </div>
 
-            <!-- LEFT CARD -->
-            <div class="bg-[#0F3B2D] text-white rounded-2xl p-8 shadow-lg w-full">
+                    <div class="s-card" id="c2">
+                        <div class="lbl">Total Members</div>
+                        <div class="num">200+</div>
+                        <div class="sub">active students</div>
+                    </div>
 
-                <h2 class="text-3xl font-semibold mb-10 heading-font">
-                    CESPA at a Glance
-                </h2>
+                    <div class="s-card" id="c3">
+                        <div class="lbl">Advisors</div>
+                        <div class="num">4+</div>
+                        <div class="sub">faculty &amp; industry</div>
+                    </div>
 
-                <!-- Item -->
-                <div class="pb-6 border-b border-white/15">
-                    <p class="text-[12px] tracking-[2px] uppercase text-[#68ffb0] font-semibold mb-3">
-                        Founded
-                    </p>
+                    <div class="s-card" id="c4">
+                        <div class="lbl">Alumni Network</div>
+                        <div class="num">100+</div>
+                        <div class="sub">across the globe</div>
+                    </div>
 
-                    <h3 class="text-4xl font-bold leading-none mb-2">
-                        2013
-                    </h3>
-
-                    <p class="text-[#7dffbe] text-sm">
-                        at GSTU, Bangladesh
-                    </p>
-                </div>
-
-                <!-- Item -->
-                <div class="py-6 border-b border-white/15">
-                    <p class="text-[12px] tracking-[2px] uppercase text-[#68ffb0] font-semibold mb-3">
-                        Total Members
-                    </p>
-
-                    <h3 class="text-4xl font-bold">
-                        500+
-                    </h3>
-                </div>
-
-                <!-- Item -->
-                <div class="py-6 border-b border-white/15">
-                    <p class="text-[12px] tracking-[2px] uppercase text-[#68ffb0] font-semibold mb-3">
-                        Advisors
-                    </p>
-
-                    <h3 class="text-4xl font-bold">
-                        45+
-                    </h3>
-                </div>
-
-                <!-- Item -->
-                <div class="py-6">
-                    <p class="text-[12px] tracking-[2px] uppercase text-[#68ffb0] font-semibold mb-3">
-                        Alumni Network
-                    </p>
-
-                    <h3 class="text-4xl font-bold">
-                        200+
-                    </h3>
-                </div>
-
-                <!-- Footer -->
-                <div class="mt-10 text-[#68ffb0] font-semibold text-sm tracking-wide flex flex-wrap gap-3">
-                    <span>2025</span>
-                    <span>•</span>
-                    <span>GSTU</span>
-                    <span>•</span>
-                    <span>6 Chapters</span>
+                    <div class="cards-footer" id="cfooter">2025 &nbsp;·&nbsp; GSTU &nbsp;·&nbsp; 1 Chapters</div>
                 </div>
             </div>
 
+            <!-- RIGHT: text -->
+            <div class="right-panel">
+                <div class="font-inter text-[12px] uppercase  text-black tracking-wide   ">Who We Are</div>
 
-            <!-- RIGHT CONTENT -->
-            <div class="lg:col-span-2">
+                <h2 class="font-cormorant text-black text-5xl my-6">
+                    A Community Built on<br>Engineering Excellence</em>
+                </h2>
 
-                <p class="uppercase tracking-[4px] text-sm text-[#1b5a43] font-semibold mb-4">
-                    Who We Are
-                </p>
-
-                <h1 class="heading-font text-5xl md:text-6xl leading-tight text-[#1f1f1f] mb-10">
-                    A Community Built on <br class="hidden md:block">
-                    Engineering Excellence
-                </h1>
-
-                <!-- Mission Box -->
-                <div class="border-l-4 border-[#2d6a4f] pl-6 mb-10">
-                    <h3 class="text-2xl font-semibold text-[#1f1f1f] mb-3">
-                        Our Mission
-                    </h3>
-
-                    <p class="text-gray-700 leading-8 text-lg">
-                        We empower Civil Engineering students, industry pioneers,
-                        and young alumni with opportunities to grow academically,
-                        professionally, and as responsible leaders.
-                    </p>
+                <div class="t-block font-inter border-l-4 ps-5 text-justify text-black" id="tb0">
+                    <div class="mb-2">Our Mission</div>
+                    <blockquote>
+                        <p class="">We empower Civil Engineering students, industry pioneers, and young alumni with opportunities
+                            to grow academically, professionally, and as responsible leaders.</p>
+                    </blockquote>
                 </div>
 
-                <!-- Paragraphs -->
-                <div class="space-y-8 text-gray-700 text-lg leading-9">
-
-                    <p>
-                        Founded at GSTU in 2013, CESPA has grown into one of Bangladesh's
-                        most impactful engineering student societies — producing award-winning
-                        graduates, accomplished civil servants, and trailblazing entrepreneurs
-                        across the globe.
-                    </p>
-
-                    <p>
-                        Our alumni network spans prominent positions in government, NGOs,
-                        international firms, and research institutions. With a vibrant
-                        executive committee, student members participate in national
-                        competitions, workshops, seminars, research, and community outreach
-                        year-round.
-                    </p>
-
+                <div class="t-block" id="tb1">
+                    <p class="font-inter text-justify text-black">Founded at GSTU in 2013, CESPA has grown into one of Bangladesh's most impactful engineering
+                        student societies — producing award-winning graduates, accomplished civil servants, and
+                        trailblazing entrepreneurs across the globe.</p>
                 </div>
 
+                <div class="t-block font-inter text-justify text-black" id="tb2">
+                    <p>Our alumni network spans prominent positions in government, NGOs, international firms, and
+                        research institutions. With a vibrant executive committee, student members participate in
+                        national competitions, workshops, seminars, research, and community outreach year-round.</p>
+                </div>
+
+                <!-- progress pips -->
+                <div class="progress-bar" id="pips"></div>
+
+                <div class="scroll-nudge" id="nudge">scroll to reveal</div>
             </div>
 
         </div>
-
-    </section>
+    </div>
 
     <!-- ===== ACTIVITIES & EVENTS ===== -->
-    <section class="activity-section py-16 md:py-24  bg-green-950">
+    <section class="activity-section py-16 md:py-24 text-!black">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p class="text-green-400 text-xs font-bold uppercase tracking-widest mb-2">What We Do</p>
-            <h2 class="text-white mb-3"
-                style="font-family:'Playfair Display',serif; font-size:clamp(1.6rem,3.5vw,2.4rem);">Activities & Events
+            <p class="font-inter text-[12px] uppercase  text-black  tracking-wide font-medium">What We Do</p>
+            <h2 class="font-cormorant text-black text-5xl my-6">Activities & Events
             </h2>
-            <p class="text-green-300 text-sm mb-10 max-w-lg">From workshops to national competitions — CESPA keeps its
-                members at the forefront of engineering practice.</p>
 
-            <div class="card-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="card-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 my-8 pt-6">
 
             </div>
         </div>
@@ -1189,6 +1141,7 @@
     <script src="./activity.js"></script>
     <script src="./home.js"></script>
     <script src="./contact.js"></script>
+    <script src="./WhoWeAre.js"></script>
 </body>
 
 </html>
