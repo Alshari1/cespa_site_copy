@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CESPA — Who We Are</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #fff; font-family: 'Outfit', sans-serif; color: #1a1a1a; }
+
+  .section {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    min-height: 100vh;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 7rem 4rem;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  /* ── LEFT: Stats ── */
+  .stats-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem 2rem;
+    padding-top: 0.5rem;
+  }
+
+  .stat-item {}
+
+  .stat-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 0.6rem;
+  }
+
+  .stat-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 54px;
+    font-weight: 400;
+    color: #111;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .stat-sub {
+    font-size: 13px;
+    font-weight: 300;
+    color: #888;
+    margin-top: 0.5rem;
+    line-height: 1.5;
+  }
+
+  /* divider between stat pairs */
+  .stats-col::after {
+    display: none;
+  }
+
+  /* ── RIGHT: Content ── */
+  .content-col {}
+
+  .eyebrow {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 1.6rem;
+  }
+
+  .headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.1;
+    color: #111;
+    letter-spacing: -0.01em;
+    margin-bottom: 2.5rem;
+  }
+
+  .mission-block {
+    border-left: 2px solid #111;
+    padding-left: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .mission-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: #111;
+    margin-bottom: 0.75rem;
+  }
+
+  .mission-text {
+    font-size: 14.5px;
+    font-weight: 300;
+    color: #444;
+    line-height: 1.85;
+  }
+
+  .body-text {
+    font-size: 14.5px;
+    font-weight: 300;
+    color: #555;
+    line-height: 1.9;
+    margin-bottom: 1.25rem;
+  }
+
+  .body-text:last-child { margin-bottom: 0; }
+
+  /* Divider between stats rows */
+  .stat-divider {
+    grid-column: 1 / -1;
+    height: 0.5px;
+    background: #e8e5e0;
+    margin: 0;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .stats-col { animation: fadeUp 0.7s ease both 0.05s; }
+  .content-col { animation: fadeUp 0.7s ease both 0.15s; }
+</style>
+</head>
+<body>
+
+<section class="section">
+
+  <!-- LEFT: Stats -->
+  <div class="stats-col">
+
+    <div class="stat-item">
+      <p class="stat-label">Founded</p>
+      <p class="stat-value">2026</p>
+      <p class="stat-sub">at GSTU, Bangladesh</p>
+    </div>
+
+    <div class="stat-item">
+      <p class="stat-label">Total Members</p>
+      <p class="stat-value">200+</p>
+      <p class="stat-sub">active students</p>
+    </div>
+
+    <div class="stat-divider"></div>
+
+    <div class="stat-item">
+      <p class="stat-label">Advisors</p>
+      <p class="stat-value">4+</p>
+      <p class="stat-sub">faculty &amp; industry</p>
+    </div>
+
+    <div class="stat-item">
+      <p class="stat-label">Alumni Network</p>
+      <p class="stat-value">100+</p>
+      <p class="stat-sub">across the globe</p>
+    </div>
+
+  </div>
+
+  <!-- RIGHT: Content -->
+  <div class="content-col">
+    <p class="eyebrow">Who we are</p>
+    <h2 class="headline">A Community Built on<br>Engineering Excellence</h2>
+
+    <div class="mission-block">
+      <p class="mission-title">Our Mission</p>
+      <p class="mission-text">We empower Civil Engineering students, industry pioneers, and young alumni with opportunities to grow academically, professionally, and as responsible leaders.</p>
+    </div>
+
+    <p class="body-text">Founded at GSTU in 2013, CESPA has grown into one of Bangladesh's most impactful engineering student societies — producing award-winning graduates, accomplished civil servants, and trailblazing entrepreneurs across the globe.</p>
+
+    <p class="body-text">Our alumni network spans prominent positions in government, NGOs, international firms, and research institutions. With a vibrant executive committee, student members participate in national competitions, workshops, seminars, research, and community outreach year-round.</p>
+  </div>
+
+</section>
+
+</body>
+</html>

@@ -1,56 +1,88 @@
-        const images = [
-            "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=700&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=700&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=700&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=700&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=700&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=700&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1560439514-4e9645039924?w=700&auto=format&fit=crop",
-        ];
+document.addEventListener("DOMContentLoaded", () => {
+    const carousel = document.querySelector('.carousel');
+    if (!carousel) return;
 
-        const track = document.getElementById("track");
-        const progress = document.getElementById("prog");
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    let autoPlayTimer;
 
-        // Create cards
-        images.forEach(img => {
-            track.innerHTML += `
-      <div class="card">
-        <img src="${img}">
-      </div>
-    `;
-        });
+    // AUTO-PLAY TIMER (Loops every 3.5 seconds)
+    function startAutoPlay() {
+        autoPlayTimer = setInterval(() => {
+            const firstItem = carousel.querySelector('div');
+            if (!firstItem) return;
 
-        let index = 0;
-        const width = 274; // card width + gap
+            const cardWidth = firstItem.offsetWidth;
+            const gap = parseFloat(window.getComputedStyle(carousel).gap) || 0;
+            const step = cardWidth + gap;
 
-        function progressBar() {
-
-            progress.style.transition = "none";
-            progress.style.width = "0%";
-
-            setTimeout(() => {
-                progress.style.transition = "3s linear";
-                progress.style.width = "100%";
-            }, 50);
-
-        }
-
-        function slide() {
-
-            index++;
-
-            if (index > images.length - 3) {
-                index = 0;
+            // Loop back to start if at the end
+            if (carousel.scrollLeft >= (carousel.scrollWidth - carousel.clientWidth - 10)) {
+                carousel.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                carousel.scrollBy({ left: step, behavior: 'smooth' });
             }
+        }, 3500);
+    }
 
-            track.style.transform =
-                `translateX(-${index * width}px)`;
+    function stopAutoPlay() {
+        clearInterval(autoPlayTimer);
+    }
 
-            progressBar();
+    // CLICK AND DRAG LOGIC (Desktop mouse events)
+    carousel.addEventListener('mousedown', (e) => {
+        isDown = true;
+        carousel.classList.add('dragging');
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+        stopAutoPlay(); // Pause auto-play during interaction
+    });
 
-        }
+    carousel.addEventListener('mouseleave', () => {
+        if (!isDown) return;
+        isDown = false;
+        carousel.classList.remove('dragging');
+        snapToNearest();
+        startAutoPlay(); // Resume auto-play
+    });
 
-        progressBar();
+    carousel.addEventListener('mouseup', () => {
+        isDown = true; // Temporary flag to handle snapping
+        isDown = false;
+        carousel.classList.remove('dragging');
+        snapToNearest();
+        startAutoPlay();
+    });
 
-        setInterval(slide, 3000);
+    carousel.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 1.5; // Drag speed multiplier
+        carousel.scrollLeft = scrollLeft - walk;
+    });
+
+    // Snaps the carousel nicely onto the closest item after dragging ends
+    function snapToNearest() {
+        const firstItem = carousel.querySelector('div');
+        if (!firstItem) return;
+
+        const cardWidth = firstItem.offsetWidth;
+        const gap = parseFloat(window.getComputedStyle(carousel).gap) || 0;
+        const step = cardWidth + gap;
+        
+        const targetIndex = Math.round(carousel.scrollLeft / step);
+        carousel.scrollTo({
+            left: targetIndex * step,
+            behavior: 'smooth'
+        });
+    }
+
+    // Touch events start/stop autoplay on mobile
+    carousel.addEventListener('touchstart', stopAutoPlay);
+    carousel.addEventListener('touchend', startAutoPlay);
+
+    // Initial Start
+    startAutoPlay();
+});

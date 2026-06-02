@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Step 3: Render Link Block
     const linkHTML = `
                 <div class="flex items-end pb-4 reveal-item">
-                    <a href="#" class="group inline-flex items-center gap-2 text-slate-900 font-bold hover:text-blue-600 transition-colors duration-300 py-2">
+                    <a href="#" class="group inline-flex items-center gap-2 font-inter text-[12px] uppercase text-black  tracking-wide font-semibold py-2 font-playfair">
                         See All Members
                         <svg xmlns="http://www.w3.org/2000/svg" 
                              class="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300 ease-out" 

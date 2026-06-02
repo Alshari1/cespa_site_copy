@@ -98,14 +98,16 @@
 
 /* The outer container that hides the overflow */
 .marquee-wrapper {
-    overflow: hidden; /* Hides the text when it goes off-screen */
+    overflow: hidden;
+    /* Hides the text when it goes off-screen */
     width: 100%;
     padding: 15px 0;
 }
 
 .marquee {
     display: inline-block;
-    white-space: nowrap; /* Forces text to stay on one single line */
+    white-space: nowrap;
+    /* Forces text to stay on one single line */
     will-change: transform;
 
 }
@@ -128,7 +130,7 @@ a:hover {
     font-style: normal;
 }
 
-.preospe-font {
+.font-preospe {
     font-family: 'Preospe', sans-serif;
 }
 
@@ -139,3 +141,16 @@ a:hover {
 .font-inter {
     font-family: 'Inter', sans-serif;
 }
+
+.font-poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+.font-lato {
+    font-family: "Lato", sans-serif;
+}
+.font-playfair {
+    font-family: "Playfair Display", sans-serif;
+}
+
+

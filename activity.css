@@ -66,8 +66,10 @@
 
 /* Description */
 .activity-card p {
-    font-size: 13px;
-    /* color: #888; */
+    font-family: 'Lato', serif;
+    font-size: 14px;
+    /* color: #444444; */
+    color: black;
     line-height: 1.8;
     margin: 2rem 0;
     text-align: justify;
